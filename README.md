@@ -15,6 +15,7 @@ There are two S3 buckets: input and output. There are two lambda functions: star
 4. Create the S3 buckets. 
 5. Create the startEC2 and stopEC2 lambda functions. Make sure to up the number of seconds of the timeout for stopEC2 as the source code inserts a wait of 3 seconds to make sure the file is completely copied before it stops the EC2 instance. 
 6. Under Properties option for S3 buckets, create an Event that notifies startEC2 when a file is uploaded into the input bucket and another one that notifies stopEC2 when a file is uploaded into the output bucket. 
+7. Update rc.local to execute the process.py upon boot. 
 
 ### Security roles
 There are several points during this process that you will be required to set security roles and rules. I am avoiding that discussion as that will change depending on your installation. 
